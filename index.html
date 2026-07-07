@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miraku Boston | Ramen The Right Way</title>
+<link rel="icon" type="image/png" href="./assets/logo_light.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#000000',
+          bone: '#ffffff',
+          rust: '#9a4a2b',
+          smoke: '#232323',
+        },
+        fontFamily: {
+          display: ['Oswald', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .tracked { letter-spacing: 0.18em; }
+  .rule { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); }
+  .bowl-ring { box-shadow: 0 0 0 1px rgba(255,255,255,0.15); }
+  .placeholder-block {
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 12px);
+  }
+  #navbar { transition: background-color .4s ease, padding .4s ease, border-color .4s ease; }
+  #navbar.scrolled { background-color: rgba(10,10,10,0.9); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+</style>
+</head>
+<body class="bg-ink text-white font-body antialiased">
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 border-b border-transparent">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-4">
+    <a href="#hero" class="flex items-center shrink-0">
+      <img src="./assets/logo_light.png" alt="Miraku Boston" class="h-9 md:h-10 w-auto">
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10 font-display tracked text-sm uppercase">
+      <a href="#about" class="relative hover:text-white/70 transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-rust after:transition-all after:duration-300 hover:after:w-full">About</a>
+      <a href="#faq" class="relative hover:text-white/70 transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-rust after:transition-all after:duration-300 hover:after:w-full">Join</a>
+      <a href="#menu" class="border border-white/70 rounded-sm px-5 py-2.5 hover:bg-white hover:text-ink transition-colors duration-300">Menu</a>
+    </nav>
+
+    <button id="hamburger" class="md:hidden text-2xl" aria-label="Open menu">
+      <i class='bx bx-menu'></i>
+    </button>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden flex-col items-center gap-6 py-8 bg-ink border-t border-white/10 font-display tracked text-sm uppercase">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#faq" class="mobile-link">Join</a>
+    <a href="#menu" class="border border-white/70 rounded-sm px-5 py-2.5">Menu</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="relative w-full min-h-[92vh] flex items-center overflow-hidden pt-28 md:pt-24">
+  <div class="max-w-7xl mx-auto w-full px-6 md:px-10 grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="max-w-xl">
+      <p class="tracked uppercase text-xs text-rust mb-5 font-display">Hokkaido Style &middot; Boston, MA</p>
+      <h1 class="font-display uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.95] mb-6">
+        Ramen<br>The Right<br>Way.
+      </h1>
+      <p class="text-white/70 text-base md:text-lg leading-relaxed mb-2">Miraku serves ramen from Hokkaido — broth built low and slow, noodles pulled to order.</p>
+      <p class="text-white/50 text-sm leading-relaxed mb-10">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#menu" class="bg-white text-ink font-display tracked uppercase text-sm px-8 py-4 rounded-sm hover:bg-rust hover:text-white transition-colors duration-300">View Menu</a>
+        <a href="#about" class="border border-white/60 font-display tracked uppercase text-sm px-8 py-4 rounded-sm hover:border-white transition-colors duration-300">Learn More</a>
+      </div>
+    </div>
+
+    <div class="relative flex justify-center md:justify-end">
+      <img src="./assets/ramen_hero.png" alt="Miraku Boston shoyu ramen bowl" class="w-full max-w-md md:max-w-lg drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]">
+    </div>
+  </div>
+
+  <img src="./assets/logo_light.png" alt="" class="absolute left-1/2 -translate-x-1/2 bottom-6 h-6 opacity-20 hidden lg:block">
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="w-full bg-bone text-ink py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-14 items-center">
+    <div class="aspect-[4/3] w-full rounded-sm bg-[#d9d5cc] flex items-center justify-center text-ink/40 font-display tracked uppercase text-sm">
+      Photo
+    </div>
+    <div>
+      <p class="tracked uppercase text-xs text-rust mb-4 font-display">About Miraku</p>
+      <h2 class="font-display uppercase text-4xl md:text-5xl mb-6 leading-tight">Authentic Hokkaido<br>Rishiri Ramen</h2>
+      <p class="text-ink/70 leading-relaxed max-w-md">Imported straight from Japan, our Rishiri kombu forms the backbone of every bowl — a tradition brought over and served exactly as it should be.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RAMEN TYPES -->
+<section id="ramen" class="w-full bg-ink py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 text-center">
+    <p class="tracked uppercase text-xs text-rust mb-4 font-display">On The Menu</p>
+    <h2 class="font-display uppercase text-4xl md:text-5xl mb-16">Bowls We're Known For</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 md:gap-10">
+      <div class="flex flex-col items-center">
+        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bowl-ring mb-6">
+          <img src="./assets/ramen_hero.png" alt="Shoyu Ramen" class="w-full h-full object-cover object-center scale-125">
+        </div>
+        <span class="font-display text-rust text-lg mb-1">一</span>
+        <h3 class="font-display uppercase tracked text-sm">Shoyu Ramen</h3>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bowl-ring mb-6">
+          <img src="./assets/ramen_hero.png" alt="Miso Ramen" class="w-full h-full object-cover object-center scale-125">
+        </div>
+        <span class="font-display text-rust text-lg mb-1">二</span>
+        <h3 class="font-display uppercase tracked text-sm">Miso Ramen</h3>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bowl-ring mb-6">
+          <img src="./assets/ramen_hero.png" alt="Shio Ramen" class="w-full h-full object-cover object-center scale-125">
+        </div>
+        <span class="font-display text-rust text-lg mb-1">三</span>
+        <h3 class="font-display uppercase tracked text-sm">Shio Ramen</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="w-full bg-smoke py-24 md:py-32">
+  <div class="max-w-5xl mx-auto px-6 md:px-10">
+    <div class="aspect-video w-full rounded-sm placeholder-block border border-white/10 flex items-center justify-center text-white/40 font-display tracked uppercase text-sm">
+      <i class='bx bx-play-circle text-3xl mr-2'></i> Video
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="w-full bg-ink py-24 md:py-32">
+  <div class="max-w-3xl mx-auto px-6 md:px-10">
+    <div class="flex items-center justify-center gap-3 mb-4">
+      <img src="./assets/logo_light.png" alt="" class="h-5 opacity-70">
+    </div>
+    <h2 class="font-display uppercase text-4xl md:text-5xl text-center mb-16">FAQ</h2>
+
+    <div class="divide-y divide-white/10 border-t border-b border-white/10">
+      <details class="group py-6" open>
+        <summary class="flex items-center justify-between cursor-pointer list-none font-display uppercase tracked text-sm md:text-base">
+          Is there sushi?
+          <i class='bx bx-plus text-xl group-open:rotate-45 transition-transform duration-300'></i>
+        </summary>
+        <p class="text-white/60 mt-3 text-sm md:text-base">No, there is no sushi.</p>
+      </details>
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none font-display uppercase tracked text-sm md:text-base">
+          Where are you located?
+          <i class='bx bx-plus text-xl group-open:rotate-45 transition-transform duration-300'></i>
+        </summary>
+        <p class="text-white/60 mt-3 text-sm md:text-base">We are located in Boston, MA.</p>
+      </details>
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none font-display uppercase tracked text-sm md:text-base">
+          What is ID Holdings?
+          <i class='bx bx-plus text-xl group-open:rotate-45 transition-transform duration-300'></i>
+        </summary>
+        <p class="text-white/60 mt-3 text-sm md:text-base">ID Holdings is the parent company of Miraku.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="w-full bg-bone text-ink">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
+    <img src="./assets/logo_dark.png" alt="Miraku Boston" class="h-8 md:h-9 w-auto">
+
+    <nav class="flex items-center gap-8 font-display tracked uppercase text-xs">
+      <a href="#about" class="hover:text-rust transition-colors">About</a>
+      <a href="#faq" class="hover:text-rust transition-colors">Join</a>
+      <a href="#menu" class="hover:text-rust transition-colors">Menu</a>
+    </nav>
+
+    <p class="text-ink/50 text-xs">&copy; 2026 Miraku Boston. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // navbar scroll state
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // mobile hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+    hamburger.innerHTML = isHidden ? "<i class='bx bx-x'></i>" : "<i class='bx bx-menu'></i>";
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    hamburger.innerHTML = "<i class='bx bx-menu'></i>";
+  }));
+</script>
+</body>
+</html>
